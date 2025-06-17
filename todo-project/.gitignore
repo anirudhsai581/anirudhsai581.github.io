@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 #dist is removed by anirudh (me) from here 
-dist-ssr
+
 *.local
 
 # Editor directories and files
