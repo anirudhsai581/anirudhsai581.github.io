@@ -94,7 +94,7 @@ let markAllAsDone = () => {
 
  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
         <img
-        src="/balayya.jpg"
+        src="/todo-project/dist/balayya.jpg"
           alt="NBK"
           style={{ width: '150px', height: '150px', marginRight: '15px', borderRadius: '8px' }}
         />
