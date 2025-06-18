@@ -5,9 +5,18 @@ import {v4 as uuidv4} from 'uuid';
 
 export default function Todo () {
 
-const [todos, setTodos] = useState([{task:"simple task",id:uuidv4()}]);
+const [todos, setTodos] = useState(() => {
+    // Load tasks from localStorage, or start with a default task
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
+  });
 
 const [newTodo, setNewTodo] = useState('');
+
+// Save tasks to localStorage whenever the `todos` state changes
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
 let updateTodos = (event) => {
    setNewTodo(event.target.value);
