@@ -8,7 +8,7 @@ export default function Todo () {
 const [todos, setTodos] = useState(() => {
     // Load tasks from localStorage, or start with a default task
    
-    const savedTodos = localStorage.getItem('todos');
+    const savedTodos = localStorage.getItem('todo-project-todos');
      console.log('Loaded from localStorage:', savedTodos);
     return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
     
@@ -17,10 +17,11 @@ const [todos, setTodos] = useState(() => {
 const [newTodo, setNewTodo] = useState('');
 
 // Save tasks to localStorage whenever the `todos` state changes
+
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-    console.log('Saved to localStorage:', todos);
-  }, [todos]);
+    localStorage.setItem('todo-project-todos', JSON.stringify(todos));
+      console.log('Saved to localStorage:', todos);
+}, [todos]);
 
 let updateTodos = (event) => {
    setNewTodo(event.target.value);
@@ -107,7 +108,8 @@ let markAllAsDone = () => {
 
  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
         <img
-        src="/todo-project/dist/balayya.jpg"
+        //src="/todo-project/dist/balayya.jpg"
+        src="./balayya.jpg"
           alt="NBK"
           style={{ width: '150px', height: '150px', marginRight: '15px', borderRadius: '8px' }}
         />
