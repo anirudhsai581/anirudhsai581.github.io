@@ -7,6 +7,7 @@ export default function Todo () {
 
 const [todos, setTodos] = useState(() => {
     // Load tasks from localStorage, or start with a default task
+    console.log('Loaded from localStorage:', savedTodos);
     const savedTodos = localStorage.getItem('todos');
     return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
   });
@@ -16,6 +17,7 @@ const [newTodo, setNewTodo] = useState('');
 // Save tasks to localStorage whenever the `todos` state changes
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
+    console.log('Saved to localStorage:', todos);
   }, [todos]);
 
 let updateTodos = (event) => {
