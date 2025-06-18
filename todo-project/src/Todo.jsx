@@ -7,9 +7,11 @@ export default function Todo () {
 
 const [todos, setTodos] = useState(() => {
     // Load tasks from localStorage, or start with a default task
-    console.log('Loaded from localStorage:', savedTodos);
+   
     const savedTodos = localStorage.getItem('todos');
+     console.log('Loaded from localStorage:', savedTodos);
     return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
+    
   });
 
 const [newTodo, setNewTodo] = useState('');
