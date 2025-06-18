@@ -9,7 +9,7 @@ const [todos, setTodos] = useState(() => {
     // Load tasks from localStorage, or start with a default task
    
     const savedTodos = localStorage.getItem('todo-project-todos');
-     console.log('Loaded from localStorage:', savedTodos);
+     console.log('Loaded from sessionStorage:', savedTodos);
     return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
     
   });
@@ -20,7 +20,7 @@ const [newTodo, setNewTodo] = useState('');
 
   useEffect(() => {
     localStorage.setItem('todo-project-todos', JSON.stringify(todos));
-      console.log('Saved to localStorage:', todos);
+      console.log('Saved to sessionStorage:', todos);
 }, [todos]);
 
 let updateTodos = (event) => {
