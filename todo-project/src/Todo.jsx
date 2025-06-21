@@ -10,7 +10,7 @@ const [todos, setTodos] = useState(() => {
    
     const savedTodos = localStorage.getItem('todo-project-todos');
      console.log('Loaded from sessionStorage:', savedTodos);
-    return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
+    return savedTodos ? JSON.parse(savedTodos) : [];
     
   });
 
