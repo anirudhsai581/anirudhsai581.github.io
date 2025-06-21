@@ -23,7 +23,7 @@ export default function Lottery({n =3,winningSum=15}){
             <Ticket ticket ={ticket} />
             <br></br>
             <button onClick={buyTicket}>Buy New Ticket</button>
-            <h3>{isWinning && "congratulations you won the lottery , Give me a party"}</h3>
+            <h3>{isWinning && "congratulations you won the lottery , You owe Anirudh a party"}</h3>
             </div>
             
 
